@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import apiCilent from "../services/api-cilent";
-interface Game {
+
+export interface Game {
     id: number;
     name: string;
+    background_image:string
 }
 
 interface FetcchGamesResponse {
