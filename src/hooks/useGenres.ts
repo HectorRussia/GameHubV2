@@ -1,40 +1,10 @@
-import { useEffect, useState } from "react";
-import apiCilent from "../services/api-cilent";
-import { CanceledError } from "axios";
+import useData from "./useData";
 
-interface Genre {
+export interface Genre {
     id:number;
     name:string;
 }
 
-interface FetchGenresRespone {
-    count:number;
-    results:Genre[];
-}
-
-const useGenres = () => {
-
-    const [genres,setGenres] = useState<Genre[]>([]);
-    const [error,setError] = useState('');
-    const [isLoading,setLoading] = useState(false);
-    useEffect(()=>{
-        const controller = new AbortController();
-        setLoading(true);
-        apiCilent
-        .get<FetchGenresRespone>('/games',{signal:controller.signal})
-        .then((res) => {
-            setGenres(res.data.results)
-            setLoading(false);
-        })
-        .catch((err) => {
-            if(err instanceof CanceledError) return;
-            setError(err.message)
-            setLoading(false);
-        });
-        return () => controller.abort();
-    },[]);
-    return {genres,error,isLoading};
-
-};
+const useGenres = () => useData<Genre>('/genres');
 
 export default useGenres;
