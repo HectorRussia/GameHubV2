@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import apiCilent from "../services/api-cilent";
 import { AxiosRequestConfig, CanceledError } from "axios";
-
-interface FetchRespone<T> {
+export interface FetchRespone<T> {
     count:number;
     results:T[];
 }
