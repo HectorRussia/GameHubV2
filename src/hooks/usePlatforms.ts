@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import apiCilent from "../services/api-cilent";
 import platforms from "../data/platforms";
-import { FetchRespone } from "../services/api-cilent";
+import APIClient from "../services/api-cilent";
+
+const apiCilent = new APIClient<Platform>('/platforms/list/parents');
 export interface Platform {
     id:number;
     name:string;
@@ -10,9 +11,7 @@ export interface Platform {
 
 const usePlatforms = () => useQuery({
     queryKey: ['platforms'],
-    queryFn: () =>
-         apiCilent.get<FetchRespone<Platform>>('/platforms/lists/parents')
-            .then(res=>res.data),
+    queryFn:apiCilent.getAll,
     staleTime: 24 * 60 * 60 * 1000, //24h
     initialData: {count : platforms.length, results: platforms}
 });
