@@ -1,9 +1,8 @@
 //import useData from "./useData";
 import apiCilent from "../services/api-cilent";
-import { FetchRespone } from "./useData";
 import genres from "../data/genres";
 import { useQuery } from "@tanstack/react-query";
-
+import { FetchRespone } from "../services/api-cilent";
 export interface Genre {
     id:number;
     name:string;
