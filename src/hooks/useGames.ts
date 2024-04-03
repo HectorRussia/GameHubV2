@@ -2,12 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App";
 import apiCilent from "../services/api-cilent";
 import { FetchRespone } from "../services/api-cilent";
-export interface Platform {
-    id:number;
-    name:string;
-    slug:string
-    
-}
+import { Platform } from "./usePlatforms";
+
 export interface Game {
     id: number;
     name: string;

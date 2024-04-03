@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import apiCilent from "../services/api-cilent";
 import platforms from "../data/platforms";
 import { FetchRespone } from "../services/api-cilent";
-interface Platform {
+export interface Platform {
     id:number;
     name:string;
     slug:string
