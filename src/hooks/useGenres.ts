@@ -2,6 +2,7 @@
 import genres from "../data/genres";
 import APIClient from "../services/api-cilent";
 import { useQuery } from "@tanstack/react-query";
+import ms from 'ms';
 
 const apiCilent = new APIClient<Genre>('/genres');
 export interface Genre {
@@ -14,7 +15,7 @@ export interface Genre {
 const useGenres = () => useQuery({
     queryKey: ['genres'],
     queryFn: apiCilent.getAll,
-    staleTime: 24 * 60 * 60 * 1000, // 24h up to you set
+    staleTime: ms('24h'), // 24h up to you set
     initialData: genres
 })
 

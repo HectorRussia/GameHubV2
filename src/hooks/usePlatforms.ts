@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import platforms from "../data/platforms";
 import APIClient from "../services/api-cilent";
+import ms from "ms";
 
 const apiCilent = new APIClient<Platform>('/platforms/list/parents');
 export interface Platform {
@@ -12,7 +13,7 @@ export interface Platform {
 const usePlatforms = () => useQuery({
     queryKey: ['platforms'],
     queryFn:apiCilent.getAll,
-    staleTime: 24 * 60 * 60 * 1000, //24h
+    staleTime: ms('24h'), //24h
     initialData: platforms
 });
 
