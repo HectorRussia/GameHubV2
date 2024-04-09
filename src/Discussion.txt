@@ -1,0 +1,48 @@
+with zustand in place , each component 
+retrieves the pieces of state it. needs
+directly from the store. while 
+this greatly simplifies our code, it makes
+our component less reusable because they rely
+on the store's existence to fucntion.
+
+โดยมี zustand อยู่ในตำแหน่ง แต่ละองค์ประกอบ
+ดึงชิ้นส่วนของรัฐออกมา ความต้องการ
+โดยตรงจากร้านค้า ในขณะที่
+สิ่งนี้ทำให้โค้ดของเราง่ายขึ้นอย่างมาก
+ส่วนประกอบของเราสามารถนำกลับมาใช้ใหม่ได้น้อยลงเนื่องจากต้องพึ่งพา
+เกี่ยวกับการดำรงอยู่ของร้านค้าเพื่อฟังก์ชั่น
+
+In contrast passing data of our props can make our
+component more self contained and reusable, because
+they don't rely on an external data source.
+
+ในทางตรงกันข้ามข้อมูลที่ส่งผ่านอุปกรณ์ประกอบฉากของเราสามารถทำให้เราได้
+ส่วนประกอบมีอยู่ในตัวเองมากขึ้นและนำกลับมาใช้ใหม่ได้เพราะ
+พวกเขาไม่ต้องอาศัยแหล่งข้อมูลภายนอก
+
+In this case, it's unlikely that we're going
+to reuse any of the component we have refactored
+in other parts of the application with different
+data set. 
+
+ในกรณีนี้ ไม่น่าเป็นไปได้ที่เราจะไป
+เพื่อนำส่วนประกอบใดๆ ที่เราปรับโครงสร้างใหม่กลับมาใช้ใหม่
+ในส่วนอื่น ๆ ของแอปพลิเคชันด้วยที่แตกต่างกัน
+ชุดข้อมูล
+
+Ex. the genrelist component alwats needs to know
+the selected genre ID that is in the store. if the
+situation change in the future we can always modify
+these component and pass data to them via props
+
+องค์ประกอบประเภทเพลงที่ alwats จำเป็นต้องรู้
+ID ประเภทที่เลือกซึ่งอยู่ในร้านค้า ถ้า
+สถานการณ์ที่เปลี่ยนแปลงไปในอนาคตเราสามารถแก้ไขได้เสมอ
+องค์ประกอบเหล่านี้และส่งข้อมูลไปยังองค์ประกอบเหล่านั้นผ่านอุปกรณ์ประกอบฉาก
+
+
+So remember, there is no one-size-fits-all solution
+in managing data flow in React
+
+ดังนั้น จำไว้ว่าไม่มีวิธีแก้ปัญหาแบบใดที่เหมาะกับทุกคน
+ในการจัดการกระแสข้อมูลใน React
