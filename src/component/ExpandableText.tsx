@@ -23,5 +23,4 @@ const ExpandableText = ({children} : Props) => {
     </Text>
   )
 }
-
 export default ExpandableText
